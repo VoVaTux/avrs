@@ -1,0 +1,2 @@
+curl -s 'https://query1.finance.yahoo.com/v7/finance/quote?lang=en-US&region=US&cordsDomain=finance.yahoo.com&symbols='"$1"'' | jq . | grep -oP "(?<=\"regularMarketPrice\": ).*" | sed -e 's/,/$/g'
+
